@@ -31,20 +31,26 @@ export default function CarForm() {
       <form onSubmit={onHandleSubmit}>
         <div className="field-group">
           <div className="field">
-            <label className="label">Car Name:</label>
+            <label className="label" htmlFor="name">
+              Car Name:
+            </label>
             <input
               className="input is-expanded"
               onChange={onNameChangeHandle}
               value={name}
+              id="name"
             />
           </div>
           <div className="field">
-            <label className="label">Car Value</label>
+            <label className="label" htmlFor="cost">
+              Car Value
+            </label>
             <input
               className="input is-expanded"
               onChange={onCostChangeHandle}
               value={cost || ""}
               type="number"
+              id="cost"
             />
           </div>
         </div>

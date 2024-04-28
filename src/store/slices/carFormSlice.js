@@ -23,3 +23,6 @@ const carFormSlice = createSlice({
 
 export const { changeName, changeCost } = carFormSlice.actions;
 export const carFormReducer = carFormSlice.reducer;
+export const useSelectFormValues = (state) => {
+  return { name: state.name, cost: state.cost };
+};

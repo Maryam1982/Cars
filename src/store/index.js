@@ -1,5 +1,14 @@
-import { configureStore, createAction } from "@reduxjs/toolkit";
-import { carFormReducer, changeCost, changeName } from "./slices/carFormSlice";
+import {
+  configureStore,
+  createAction,
+  combineReducers,
+} from "@reduxjs/toolkit";
+import {
+  carFormReducer,
+  changeCost,
+  changeName,
+  useSelectFormValues,
+} from "./slices/carFormSlice";
 import {
   carListReducer,
   changeSearchTerm,
@@ -9,19 +18,32 @@ import {
 
 const reset = createAction("app/reset");
 
-const store = configureStore({
-  reducer: {
-    carForm: carFormReducer,
-    carList: carListReducer,
-  },
+const rootReducer = combineReducers({
+  carForm: carFormReducer,
+  carList: carListReducer,
 });
 
+const setupStore = (preloadedState) => {
+  return configureStore({
+    reducer: rootReducer,
+    preloadedState,
+  });
+};
+
+// const store = configureStore({
+//   reducer: {
+//     carForm: carFormReducer,
+//     carList: carListReducer,
+//   },
+// });
+
 export {
-  store,
+  setupStore,
   reset,
   changeCost,
   changeName,
   changeSearchTerm,
   addCar,
   deleteCar,
+  useSelectFormValues,
 };

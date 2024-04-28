@@ -5,13 +5,13 @@ import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 
 import App from "./App";
-import { store } from "./store";
+import { setupStore } from "./store";
 
 const el = document.getElementById("root");
 const root = createRoot(el);
 
 root.render(
-  <Provider store={store}>
+  <Provider store={setupStore()}>
     <App />
   </Provider>
 );

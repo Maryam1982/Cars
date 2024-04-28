@@ -16,6 +16,8 @@ const carListSlice = createSlice({
     },
     addCar(state, action) {
       //Assumption: action.payload === {name:'something', price:120}
+      // console.log("add car was executed");
+      // console.log(action);
       state.cars.push({
         name: action.payload.name,
         cost: action.payload.cost,
