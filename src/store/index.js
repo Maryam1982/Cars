@@ -14,6 +14,8 @@ import {
   changeSearchTerm,
   addCar,
   deleteCar,
+  selectCarListCars,
+  selectCarListSearchTerm,
 } from "./slices/carListSlice";
 
 const reset = createAction("app/reset");
@@ -46,4 +48,6 @@ export {
   addCar,
   deleteCar,
   useSelectFormValues,
+  selectCarListCars,
+  selectCarListSearchTerm,
 };

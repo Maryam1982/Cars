@@ -29,3 +29,5 @@ const carListSlice = createSlice({
 
 export const { changeSearchTerm, deleteCar, addCar } = carListSlice.actions;
 export const carListReducer = carListSlice.reducer;
+export const selectCarListCars = (state) => state.cars;
+export const selectCarListSearchTerm = (state) => state.searchTerm;
